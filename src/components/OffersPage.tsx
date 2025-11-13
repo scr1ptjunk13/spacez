@@ -15,27 +15,165 @@ function CouponCard({ code, title, description, discount, color }: CouponProps) 
   };
 
   return (
-    <div className="flex bg-white rounded-lg shadow-sm border border-gray-200 mb-4 overflow-hidden">
-      {/* Left side - Discount */}
-      <div className={`${color} text-white p-4 flex flex-col justify-center items-center min-w-[80px]`}>
+    <div 
+      className="flex bg-white rounded-lg shadow-sm border border-gray-200 mb-4 overflow-hidden opacity-100"
+      style={{
+        width: '345px',
+        height: '184px'
+      }}
+    >
+      {/* Discount Section */}
+      <div 
+        className="flex flex-col justify-center items-center text-white opacity-100"
+        style={{
+          width: '68px',
+          height: '184px',
+          background: 'var(--colour-semantic-background-surface-background-surface-brown-prominent, #C16B3E)',
+          borderRightWidth: 'var(--border-25, 1px)',
+          paddingTop: 'var(--padding-500, 16px)',
+          paddingRight: 'var(--padding-300, 8px)',
+          paddingBottom: 'var(--padding-500, 16px)',
+          paddingLeft: 'var(--padding-300, 8px)',
+          gap: '16px'
+        }}
+      >
         <div className="text-2xl font-bold transform -rotate-90 whitespace-nowrap">
           {discount}
         </div>
       </div>
 
-      {/* Right side - Content */}
-      <div className="flex-1 p-4">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="font-semibold text-gray-800 text-lg">{title}</h3>
+      {/* Coupon Section - Right side content */}
+      <div className="flex-1" style={{ padding: '16px' }}>
+        {/* Frame 1000005312 - Header with title and copy button */}
+        <div 
+          className="flex justify-between items-start opacity-100"
+          style={{
+            width: '241px',
+            height: '30px',
+            paddingRight: 'var(--padding-150, 6px)'
+          }}
+        >
+          {/* Frame 1000005314 - Title container */}
+          <div 
+            className="flex items-center opacity-100"
+            style={{
+              width: '99px',
+              height: '24px',
+              gap: '8px'
+            }}
+          >
+            {/* LONGSTAY Title */}
+            <h3 
+              className="opacity-100"
+              style={{
+                color: 'var(--colour-semantic-text-text, #4B4E4B)',
+                fontSize: '18px', // heading M size
+                fontWeight: '600', // SemiBold
+                lineHeight: '24px', // heading M line-height
+                letterSpacing: '0px', // heading M letter-spacing
+                verticalAlign: 'middle'
+              }}
+            >
+              {title}
+            </h3>
+          </div>
+
+          {/* Copy Button */}
           <button 
             onClick={handleCopy}
-            className="flex items-center text-orange-600 text-sm font-medium"
+            className="flex items-center opacity-100"
+            style={{
+              width: '80px',
+              height: '30px',
+              minWidth: '80px',
+              borderRadius: 'var(--corner-small, 4px)',
+              borderWidth: 'var(--border-16, 1px)',
+              borderStyle: 'solid',
+              borderColor: 'var(--colour-semantic-text-text-brand, #874B2C)',
+              paddingTop: 'var(--padding-100, 4px)',
+              paddingBottom: 'var(--padding-100, 4px)',
+              gap: '6px',
+              backgroundColor: 'transparent',
+              justifyContent: 'center'
+            }}
           >
-            📋 Copy
+            {/* Copy Icon */}
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_571_243" style={{maskType:'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+                <rect width="18" height="18" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_571_243)">
+                <path d="M6.96204 13.6875C6.44916 13.6875 6.01373 13.5085 5.65573 13.1505C5.29773 12.7925 5.11873 12.3571 5.11873 11.8442V3.15581C5.11873 2.64294 5.29773 2.2075 5.65573 1.8495C6.01373 1.4915 6.44916 1.3125 6.96204 1.3125H13.4004C13.9133 1.3125 14.3487 1.4915 14.7067 1.8495C15.0647 2.2075 15.2437 2.64294 15.2437 3.15581V11.8442C15.2437 12.3571 15.0647 12.7925 14.7067 13.1505C14.3487 13.5085 13.9133 13.6875 13.4004 13.6875H6.96204ZM6.96204 12.075H13.4004C13.4582 12.075 13.511 12.0509 13.559 12.0028C13.6072 11.9548 13.6312 11.9019 13.6312 11.8442V3.15581C13.6312 3.09806 13.6072 3.04519 13.559 2.99719C13.511 2.94906 13.4582 2.925 13.4004 2.925H6.96204C6.90429 2.925 6.85141 2.94906 6.80341 2.99719C6.75529 3.04519 6.73123 3.09806 6.73123 3.15581V11.8442C6.73123 11.9019 6.75529 11.9548 6.80341 12.0028C6.85141 12.0509 6.90429 12.075 6.96204 12.075ZM3.84954 16.8C3.33666 16.8 2.90123 16.621 2.54323 16.263C2.18523 15.905 2.00623 15.4696 2.00623 14.9567V4.65581H3.61873V14.9567C3.61873 15.0144 3.64279 15.0673 3.69091 15.1153C3.73891 15.1634 3.79179 15.1875 3.84954 15.1875H11.9004V16.8H3.84954Z" fill="#9A5632"/>
+              </g>
+            </svg>
+            {/* Copy Label */}
+            <span 
+              style={{
+                color: 'var(--colour-semantic-text-text-brand, #874B2C)',
+                fontSize: '16px', // heading S size
+                fontWeight: '500', // Medium
+                lineHeight: '22px',
+                letterSpacing: '0px' // heading S letter-spacing
+              }}
+            >
+              Copy
+            </span>
           </button>
         </div>
-        <p className="text-gray-600 text-sm mb-3">{description}</p>
-        <button className="text-gray-500 text-sm">Read more</button>
+
+        {/* Description Text */}
+        <p 
+          className="opacity-100"
+          style={{
+            color: 'var(--colour-semantic-text-text-secondary, #7D817D)',
+            fontSize: '14px', // body S size
+            fontWeight: '400', // Regular
+            lineHeight: '20px', // body S line-height
+            letterSpacing: '0px', // body S letter-spacing
+            verticalAlign: 'middle',
+            marginTop: '12px',
+            marginBottom: '12px'
+          }}
+        >
+          {description}
+        </p>
+
+        {/* Divider Line */}
+        <div 
+          className="opacity-100"
+          style={{
+            width: '241px',
+            height: '0px',
+            borderTop: '1px solid var(--colour-semantic-border, #E5E6E5)',
+            marginBottom: '12px'
+          }}
+        />
+
+        {/* Read More Button */}
+        <button 
+          className="opacity-100"
+          style={{
+            width: '80px',
+            height: '28px',
+            minWidth: '80px',
+            minHeight: '24px',
+            borderRadius: 'var(--corner-small, 4px)',
+            borderWidth: 'var(--border-16, 1px)',
+            borderStyle: 'solid',
+            borderColor: 'transparent',
+            paddingTop: 'var(--padding-100, 4px)',
+            paddingRight: 'var(--padding-0, 0px)',
+            paddingBottom: 'var(--padding-100, 4px)',
+            paddingLeft: 'var(--padding-0, 0px)',
+            gap: '6px',
+            backgroundColor: 'transparent',
+            color: 'var(--colour-semantic-text-text-secondary, #7D817D)',
+            fontSize: '14px',
+            fontWeight: '400'
+          }}
+        >
+          Read more
+        </button>
       </div>
     </div>
   );
@@ -197,18 +335,83 @@ export default function OffersPage() {
       <div className="sticky top-16 bg-gray-50 z-10 border-b border-gray-200">
         <div className="px-4 py-6">
           {/* Offers Header */}
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Offers</h1>
+          <h1 
+            className="font-semibold mb-2 opacity-100"
+            style={{
+              width: '345px',
+              height: '28px',
+              color: '#4B4E4B',
+              fontSize: '24px', // heading L size
+              fontWeight: '600', // SemiBold
+              lineHeight: '28px', // heading L line-height
+              letterSpacing: '0px', // heading L letter-spacing
+              verticalAlign: 'middle'
+            }}
+          >
+            Offers
+          </h1>
           
           {/* Sign In Section */}
           {!isSignedIn ? (
-            <div className="bg-white rounded-lg p-4 mb-6 shadow-sm">
-              <p className="text-gray-600 mb-4">Sign in to unlock exclusive additional rewards</p>
-              <button 
-                onClick={() => setIsSignedIn(true)}
-                className="w-full bg-orange-600 text-white py-3 rounded-lg font-medium"
+            <div 
+              className="bg-white rounded-lg mb-6 shadow-sm opacity-100"
+              style={{
+                width: '393px',
+                height: '104px',
+                paddingTop: '16px', // Size/Lowvalue/9
+                paddingRight: '24px', // padding/600
+                paddingBottom: '16px', // Size/Lowvalue/9
+                paddingLeft: '24px', // padding/600
+                gap: '12px'
+              }}
+            >
+              <div 
+                className="opacity-100"
+                style={{
+                  width: '345px',
+                  height: '72px',
+                  gap: '12px',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
               >
-                Sign In
-              </button>
+                <p 
+                  className="opacity-100"
+                  style={{
+                    width: '345px',
+                    height: '20px',
+                    color: '#4B4E4B',
+                    fontSize: '14px', // body S size
+                    fontWeight: '400', // Regular
+                    lineHeight: '20px', // body S line-height
+                    letterSpacing: '0px', // body S letter-spacing
+                    verticalAlign: 'middle'
+                  }}
+                >
+                  Sign in to unlock exclusive additional rewards
+                </p>
+                <button 
+                  onClick={() => setIsSignedIn(true)}
+                  className="opacity-100"
+                  style={{ 
+                    width: '345px', 
+                    height: '40px',
+                    backgroundColor: '#C16B3E',
+                    color: '#FFFFFF',
+                    borderRadius: '4px',
+                    paddingTop: '8px',
+                    paddingRight: '16px', 
+                    paddingBottom: '8px',
+                    paddingLeft: '16px',
+                    gap: '6px',
+                    border: 'none',
+                    fontSize: '16px',
+                    fontWeight: '500'
+                  }}
+                >
+                  Sign in
+                </button>
+              </div>
             </div>
           ) : (
             <div className="mb-6">
@@ -239,7 +442,21 @@ export default function OffersPage() {
       <div className="px-4 py-6 pb-24">
         {/* Sitewide Coupons */}
         <div ref={couponsRef} className="mb-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Sitewide coupons:</h2>
+          <h2 
+            className="mb-4 opacity-100"
+            style={{
+              width: '345px',
+              height: '22px',
+              color: 'var(--colour-semantic-text-text, #4B4E4B)',
+              fontSize: '16px', // heading S size
+              fontWeight: '500', // Medium
+              lineHeight: '22px',
+              letterSpacing: '0px', // heading S letter-spacing
+              verticalAlign: 'bottom'
+            }}
+          >
+            Sitewide coupons:
+          </h2>
           {coupons.map((coupon, index) => (
             <CouponCard key={index} {...coupon} />
           ))}

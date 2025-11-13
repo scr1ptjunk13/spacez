@@ -3,6 +3,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --colour-semantic-text-text: #4B4E4B;
+  --colour-semantic-text-text-brand: #874B2C;
+  --colour-semantic-text-text-secondary: #7D817D;
+  --colour-semantic-border: #E5E6E5;
+  --colour-semantic-background-surface-background-surface-brown-prominent: #C16B3E;
+  --border-25: 1px;
+  --border-16: 1px;
+  --padding-0: 0px;
+  --padding-100: 4px;
+  --padding-150: 6px;
+  --padding-300: 8px;
+  --padding-500: 16px;
+  --corner-small: 4px;
 }
 
 @theme inline {

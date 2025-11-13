@@ -2,19 +2,24 @@ import Image from 'next/image';
 
 export default function TopNavBar() {
   return (
-    <div className="flex items-center justify-between p-4 bg-white border-b border-gray-200">
-      {/* Left side - Menu icon */}
-      <button className="p-2">
-        <Image
-          src="/assets/menu.svg"
-          alt="Menu"
-          width={24}
-          height={24}
-        />
-      </button>
-
-      {/* Center - Logo */}
-      <div className="flex-1 flex justify-center">
+    <div 
+      className="flex items-center opacity-100"
+      style={{
+        width: '393px',
+        height: '56px',
+        justifyContent: 'space-between',
+        top: '40px',
+        paddingTop: '16px', // padding/400
+        paddingRight: '20px', // padding/500
+        paddingBottom: '16px', // padding/400
+        paddingLeft: '24px', // padding/600
+        backgroundColor: '#FFFFFF', // semantic background
+        borderBottom: '1px solid #E5E6E5', // semantic border
+        borderBottomWidth: '0.25px' // border/25
+      }}
+    >
+      {/* Left side - Logo */}
+      <div className="flex items-center">
         <Image
           src="/assets/logo.svg"
           alt="SPACEZ"
@@ -24,14 +29,15 @@ export default function TopNavBar() {
         />
       </div>
 
-      {/* Right side - Time and status icons */}
-      <div className="flex items-center space-x-2">
-        <span className="text-sm font-medium text-gray-700">9:30</span>
-        <div className="flex space-x-1">
-          <div className="w-4 h-3 bg-gray-400 rounded-sm"></div>
-          <div className="w-4 h-3 bg-gray-400 rounded-sm"></div>
-        </div>
-      </div>
+      {/* Right side - Menu icon */}
+      <button className="flex items-center justify-center">
+        <Image
+          src="/assets/menu.svg"
+          alt="Menu"
+          width={24}
+          height={24}
+        />
+      </button>
     </div>
   );
 }
